@@ -1,6 +1,6 @@
 # signal-ignore
 
-Native extension for node to set sigterm handler to SIG_IGN.
+NodeJS extension to set SIG_IGN as handler for a given signal.
 
 When a handler is set to SIG_IGN, the behavior of that handler is inherited within sub-processes
 created by execve:
@@ -12,10 +12,9 @@ From - http://man7.org/linux/man-pages/man7/signal.7.html
 > signals are reset to the default; the dispositions of ignored signals
 > are left unchanged.
 
-Its not possible to set a signal handler to SIG_IGN from node using javascript. Hence this module.
-
 # Typescript Usage
 ````
+import * as os from "os"
 import { ignoreSignal } from "signal-ignore";
 
 // set SIGTERM to SIG_IGN
